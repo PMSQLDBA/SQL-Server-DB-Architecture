@@ -1,0 +1,50 @@
+Here are short and easy-to-understand notes on SQL Server Architecture — ideal for interviews, training, or revision:
+
+ 🧱 SQL Server Architecture – Short Notes
+
+🔄 1. Core Components
+
+| Component                  | Description                                                      |
+| ---------------------------| ---------------------------------------------------------------- |
+| SQL Server Database Engine | Heart of SQL Server — handles storage, processing, and security  |
+| SQL OS                     | Manages scheduling, memory, and I/O like an OS inside SQL Server |
+| Relational Engine          | Parses, compiles, and executes T-SQL queries (Query Processor)   |
+| Storage Engine             | Manages data storage, retrieval, transactions, and locking       |
+| Buffer Pool                | Memory area for caching data pages and execution plans           |
+| Transaction Log            | Ensures ACID compliance and recovery after failures              |
+
+
+🧠 2. Memory Components
+
+* Buffer Cache: Stores data pages read from disk
+* Procedure Cache: Stores compiled query plans
+* Log Buffer: Temporary memory area to hold transaction logs before writing to disk
+
+
+📄 3. SQL Server Services
+
+| Service                  | Purpose                                   |
+| ------------------------ | ----------------------------------------- |
+| SQL Server (MSSQLSERVER) | Main database engine                      |
+| SQL Server Agent         | Job scheduling and automation             |
+| SQL Server Browser       | Helps clients connect to correct instance |
+| Full-Text Search         | Enables fast text search capabilities     |
+
+
+⚙️ 4. SQL Server Execution Flow (High-Level)
+
+1. Client sends T-SQL query
+2. Protocol layer receives and forwards the query
+3. Parser parses and generates a query tree
+4. Optimizer creates the best execution plan
+5. Query Executor runs the plan
+6. Storage Engine accesses data pages (from buffer pool or disk)
+7. Results returned to client
+
+
+🛡 5. ACID Compliance
+
+* Atomicity: All or nothing
+* Consistency: Data integrity maintained
+* Isolation: Transactions don't affect each other
+* Durability: Committed data is permanent
